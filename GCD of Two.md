@@ -39,15 +39,88 @@ a = 60, b = 36
 - **Expected Time Complexity:** O(log(min(a, b)))
 - **Expected Auxiliary Space Complexity:** O(1)
 
-### Accepted Solutions (3)
+### Accepted Solutions (5)
 
-#### Solution 1 (Python)
+#### Solution 1 (Java)
+
+- **Submitted:** 2026-10-14 23:59:41
+- **Status:** Correct
+- **Marks:** 0
+
+```java
+class Solution {
+    public static int gcd(int a, int b) {
+        // code here
+        if(a>b) return Solution.recursion(a,b);
+        return Solution.recursion(b,a);
+        
+    }
+    static int recursion(int a,int b){
+        if(a==0) return b;
+        return recursion(b%a,a);
+    }
+}
+```
+
+#### Solution 2 (Java)
+
+- **Submitted:** 2026-10-14 23:39:48
+- **Status:** Correct
+- **Marks:** 0
+
+```java
+import math
+class Solution:
+    def gcd(self, a, b):
+        # code here
+        return math.gcd(a,b);
+```
+
+#### Solution 3 (Java)
+
+- **Submitted:** 2026-10-14 23:37:27
+- **Status:** Correct
+- **Marks:** 0
+
+```java
+import math
+class Solution:
+    def gcd(self, a, b):
+        # code here
+        return math.gcd(a,b);
+```
+
+#### Solution 4 (Java)
+
+- **Submitted:** 2026-07-19 01:21:34
+- **Status:** Correct
+- **Marks:** 0
+
+```java
+import java.math.*;
+
+class Solution {
+    public static int gcd(int a, int b) {
+        // code here
+        // if(a<=b){
+        BigInteger big = BigInteger.valueOf(a);
+      
+        
+    
+        BigInteger ans = big.gcd(BigInteger.valueOf(b));    
+    
+        return ans.intValue();
+    }
+}
+```
+
+#### Solution 5 (Java)
 
 - **Submitted:** 2026-07-16 22:34:45
 - **Status:** Correct
 - **Marks:** 0
 
-```python
+```java
 import java.math.*;
 class Solution {
     
@@ -71,57 +144,4 @@ class Solution {
 }
 ```
 
-#### Solution 2 (Python)
-
-- **Submitted:** 2026-07-16 22:31:12
-- **Status:** Correct
-- **Marks:** 0
-
-```python
-import java.math.*;
-class Solution {
-    
-    public static int gcd(int a, int b) {
-        // code here
-        BigInteger r =BigInteger.valueOf(a);
-        BigInteger p =BigInteger.valueOf(b);
-        
-
-        
-        return r.gcd(p).intValue();
-        
-        
-    }
-}
-```
-
-#### Solution 3 (Python)
-
-- **Submitted:** 2026-03-16 22:29:46
-- **Status:** Correct
-- **Marks:** 1
-
-```python
-class Solution {
-    
-    static int gcdRecursion(int a, int b){
-        if(a==0) return b;
-        
-        return gcdRecursion(b%a,a);
-
-    }
-    
-    public static int gcd(int a, int b) {
-        // code here
-        if(a>b){
-         return   gcdRecursion(b,a);
-        }
-        
-        return gcdRecursion(a,b);
-        
-        
-    }
-}
-```
-
-*Generated on: 14/10/2026, 23:53:15*
+*Generated on: 15/10/2026, 00:01:01*
